@@ -56,23 +56,36 @@ const PlatformCard = ({
 		};
 	};
 
+
+      const handleCardClick = (e: React.MouseEvent) => {
+			e.preventDefault();
+			e.stopPropagation();
+			window.open(link, "_blank", "noopener,noreferrer");
+		};
+
 	// Mobile card component
 	// Updated Mobile Card component to match the design
 	const MobileCard = () => (
 		<div className='bg-[#0A0A1A] rounded-2xl overflow-hidden h-full'>
-			<div className='relative flex flex-col h-full p-6'>
-				{/* Icon container */}
-				<div className='relative mb-auto'>
-					<Image
-						src={icon}
-						alt={name}
-						className='mx-auto rounded-2xl object-cover w-[120px] h-[120px]'
-					/>
-				</div>
+			<a
+				href={link}
+				target='_blank'
+				rel='noopener noreferrer'
+				className='relative flex flex-col h-full p-6'
+				onClick={(e) => e.stopPropagation()}>
+				{" "}
+				<div className='relative flex flex-col h-full p-6'>
+					{/* Icon container */}
+					<div className='relative mb-auto'>
+						<Image
+							src={icon}
+							alt={name}
+							className='mx-auto rounded-2xl object-cover w-[120px] h-[120px]'
+						/>
+					</div>
 
-				{/* Bottom section with View link and arrow */}
-				<div className='mt-auto'>
-					<a href={link} target='_blank'>
+					{/* Bottom section with View link and arrow */}
+					<div className='mt-auto'>
 						<div className='flex items-center justify-between mb-4'>
 							<span className='text-[#627FFF] text-lg underline cursor-pointer'>
 								View
@@ -81,13 +94,13 @@ const PlatformCard = ({
 								<ArrowUpRight className='text-[#627FFF] w-5 h-5' />
 							</div>
 						</div>
-					</a>
 
-					<h3 className='text-2xl font-bold text-white mt-2'>
-						{name}
-					</h3>
+						<h3 className='text-2xl font-bold text-white mt-2'>
+							{name}
+						</h3>
+					</div>
 				</div>
-			</div>
+			</a>
 		</div>
 	);
 
@@ -95,9 +108,12 @@ const PlatformCard = ({
 		<MobileCard />
 	) : (
 		<div
-			className='absolute transition-all duration-500 ease-out p-[1px] bg-gradient-to-r from-[#4467FF] to-[#7241FF] rounded-2xl'
-			style={getCardStyle()}>
-			<div className='relative bg-black backdrop-blur-sm rounded-2xl p-4 border border-blue-500/20 lg:w-[430px] lg:h-[465px] md:w-[235px] md:h-[320px] sm:w-[200px] sm:h-[280px]'>
+			className='absolute transition-all duration-500 ease-out p-[1px] bg-gradient-to-r from-[#4467FF] to-[#7241FF] rounded-2xl cursor-pointer hover:scale-[1.02] group z-50'
+			style={getCardStyle()}
+			onClick={handleCardClick}
+			role='button'
+			tabIndex={0}>
+			<div className='relative bg-black backdrop-blur-sm rounded-2xl p-4 border border-blue-500/20 lg:w-[430px] lg:h-[465px] md:w-[235px] md:h-[320px] sm:w-[200px] sm:h-[280px] group-hover:bg-black/90 transition-colors'>
 				<div className='border-4 border-gray-800 p-5 rounded-2xl'>
 					<div className='relative mb-8'>
 						<Image
@@ -107,19 +123,14 @@ const PlatformCard = ({
 						/>
 						<div className='absolute inset-0 rounded-2xl shadow-inner' />
 					</div>
-					<a href={link} target="_blank">
-						<div className='flex items-center justify-between mb-4'>
-							<span className='text-blue-400 underline cursor-pointer lg:text-[28px] md:text-[15.6px] sm:text-sm'>
-								View
-							</span>
-							<div className='bg-blue-500/20 p-1.5 rounded-full'>
-								<ArrowUpRight
-									size={16}
-									className='text-blue-400'
-								/>
-							</div>
+					<div className='flex items-center justify-between mb-4'>
+						<span className='text-blue-400 underline cursor-pointer lg:text-[28px] md:text-[15.6px] sm:text-sm'>
+							View
+						</span>
+						<div className='bg-blue-500/20 p-1.5 rounded-full'>
+							<ArrowUpRight size={16} className='text-blue-400' />
 						</div>
-					</a>
+					</div>
 				</div>
 
 				<h3
@@ -178,7 +189,7 @@ const Cards = () => {
 					className='relative h-[600px] w-full max-w-[1800px] flex items-center justify-center'
 					onMouseEnter={() => setIsExpanded(true)}
 					onMouseLeave={() => setIsExpanded(false)}>
-					<div className='absolute h-full w-full flex items-center justify-center'>
+					<div className='absolute h-full w-full flex items-center justify-center pointer-events-auto'>
 						<div className='relative lg:h-[500px] lg:w-[30%] md:w-[235px] md:h-[253px]'>
 							{platforms.map((platform, index) => (
 								<PlatformCard
@@ -191,7 +202,7 @@ const Cards = () => {
 							))}
 						</div>
 					</div>
-					<div className='absolute inset-0 bg-blue-500/15 rounded-full blur-[100px] z-40' />
+					<div className='absolute inset-0 bg-blue-500/15 rounded-full blur-[100px] pointer-events-none' />
 				</div>
 			</div>
 
