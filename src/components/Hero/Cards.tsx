@@ -150,18 +150,33 @@ const PlatformCard = ({
 };
 
 const Cards = () => {
+	// Initialize with null to indicate we don't know the screen width yet
+	const [screenWidth, setScreenWidth] = useState<number | null>(null);
 	const [isExpanded, setIsExpanded] = useState(false);
-	const [screenWidth, setScreenWidth] = useState(1024);
+	const [isClient, setIsClient] = useState(false);
 
 	useEffect(() => {
+		// Mark that we're client-side
+		setIsClient(true);
+
 		const handleResize = () => {
 			setScreenWidth(window.innerWidth);
 		};
 
+		// Set initial width
 		handleResize();
+
+		// Add event listener
 		window.addEventListener("resize", handleResize);
+
+		// Cleanup
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
+
+	// Don't render anything until we know we're client-side and have a screen width
+	if (!isClient || screenWidth === null) {
+		return null;
+	}
 
 	const platforms = [
 		{
@@ -208,7 +223,7 @@ const Cards = () => {
 
 			{/* Mobile View with Horizontal Scroll */}
 			<div className='md:hidden w-full overflow-x-auto scrollbar-hide'>
-				<div className='flex gap-4 md:p-4 pl-8 pr-4 py-8  min-w-max'>
+				<div className='flex gap-4 px-4 py-8 min-w-max'>
 					{platforms.map((platform, index) => (
 						<div
 							key={platform.name}
@@ -228,6 +243,17 @@ const Cards = () => {
 };
 
 export default Cards;
+
+
+
+
+
+
+
+
+
+
+
 
 // import React, { useState } from "react";
 // import { ArrowUpRight } from "lucide-react";
