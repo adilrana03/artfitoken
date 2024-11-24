@@ -58,15 +58,21 @@ const TokenDashboard = () => {
 
 				{/* Desktop navigation */}
 				<div className='hidden lg:flex gap-10 text-[20px] text-white font-medium'>
-					<button className='px-6 py-2 rounded-full bg-black bg-opacity-20 text-blue-400 rounded-[40px] border-[3px] border-[#4467FF]'>
-						Whitepapers
-					</button>
-					<button className='px-6 py-2 rounded-full  rounded-[40px] border-[1px] border-gray-400 bg-black'>
-						Tokenomics
-					</button>
-					<button className='px-6 py-2 rounded-full  rounded-[40px] border-[1px] border-gray-400 bg-black'>
-						Dashboard
-					</button>
+					<a href='/Artfi-whitepaper.pdf' target='_blank'>
+						<button className='px-6 py-2 rounded-full bg-black bg-opacity-20 text-blue-400 rounded-[40px] border-[3px] border-[#4467FF]'>
+							Whitepapers
+						</button>
+					</a>
+					<a href='/Artfi-Tokenomics.pdf' target='_blank'>
+						<button className='px-6 py-2 rounded-full  rounded-[40px] border-[1px] border-gray-400 bg-black'>
+							Tokenomics
+						</button>
+					</a>
+					<a href='https://dashboard.artfitoken.io/' target='_blank'>
+						<button className='px-6 py-2 rounded-full  rounded-[40px] border-[1px] border-gray-400 bg-black'>
+							Dashboard
+						</button>
+					</a>
 				</div>
 				<div className='hidden lg:flex'></div>
 
@@ -79,21 +85,29 @@ const TokenDashboard = () => {
 								onClick={toggleMenu}>
 								<X size={24} />
 							</button>
-							<button className='px-6 py-2 w-48 rounded-full bg-blue-600 bg-opacity-20 text-blue-400'>
-								Whitepapers
-							</button>
-							<button className='px-6 py-2 w-48 rounded-full bg-gray-800'>
-								Tokenomics
-							</button>
-							<button className='px-6 py-2 w-48 rounded-full bg-gray-800'>
-								Dashboard
-							</button>
+							<a href='/Artfi-whitepaper.pdf' target='_blank'>
+								<button className='px-6 py-2 w-48 rounded-full bg-blue-600 bg-opacity-20 text-blue-400'>
+									Whitepapers
+								</button>
+							</a>
+							<a href='/Artfi-Tokenomics.pdf' target='_blank'>
+								<button className='px-6 py-2 w-48 rounded-full bg-gray-800'>
+									Tokenomics
+								</button>
+							</a>
+							<a
+								href='https://dashboard.artfitoken.io/'
+								target='_blank'>
+								<button className='px-6 py-2 w-48 rounded-full bg-gray-800'>
+									Dashboard
+								</button>
+							</a>
 						</div>
 					</div>
 				)}
 			</nav>
 
-			<main className='mx-auto text-center bg-[#0a0a1a] lg:pb-[600px] md:pb-[100px] pb-[200px] mt-[10%]'>
+			<main className='mx-auto text-center bg-[#0a0a1a] lg:pb-[600px] md:pb-[100px] pb-[250px] mt-[10%]'>
 				<div className='bg max-w-7xl mx-auto bg-gradient-to-b from-[#0a0a1a] via-[#0a0a1a] to-[#7A84FB] md:h-[600px] h-[300px] rounded-3xl'>
 					<div className='mx-auto text-center mb-8 mt-10 '>
 						<Image src={logo} alt='logo' className='mx-auto' />
@@ -116,9 +130,11 @@ const TokenDashboard = () => {
 								<Copy size={20} />
 							</button>
 						</div>
-						<div className='text-nowrap flex lg:p-4 p-2 border rounded-xl border-[#4467FF] shadow shadow-[#74F] md:ml-4 text-[16px] md:text-[18px] lg:text-[24px] xl:text-[24px] 2xl:text-[28px] flex justify-center'>
-							View on Explorer
-						</div>
+						<a href='https://suiscan.xyz/mainnet/coin/0x706fa7723231e13e8d37dad56da55c027f3163094aa31c867ca254ba0e0dc79f::artfi::ARTFI/txs' target="_blank">
+							<div className='text-nowrap flex lg:p-4 p-2 border rounded-xl border-[#4467FF] shadow shadow-[#74F] md:ml-4 text-[16px] md:text-[18px] lg:text-[24px] xl:text-[24px] 2xl:text-[28px] flex justify-center'>
+								View on Explorer
+							</div>
+						</a>
 					</div>
 
 					{/* Video Container */}

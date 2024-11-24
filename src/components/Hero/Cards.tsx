@@ -6,7 +6,14 @@ import one from "@/assets/1.png";
 import two from "@/assets/2.png";
 import three from "@/assets/3.png";
 
-const PlatformCard = ({ name, icon, index, isExpanded, screenWidth }: any) => {
+const PlatformCard = ({
+	name,
+	icon,
+	index,
+	isExpanded,
+	screenWidth,
+	link,
+}: any) => {
 	const getCardStyle = () => {
 		const baseRotation = 20;
 		const initialRotation = (index - 1) * baseRotation;
@@ -65,14 +72,16 @@ const PlatformCard = ({ name, icon, index, isExpanded, screenWidth }: any) => {
 
 				{/* Bottom section with View link and arrow */}
 				<div className='mt-auto'>
-					<div className='flex items-center justify-between mb-4'>
-						<span className='text-[#627FFF] text-lg underline cursor-pointer'>
-							View
-						</span>
-						<div className='bg-[#627FFF] bg-opacity-20 p-2 rounded-full'>
-							<ArrowUpRight className='text-[#627FFF] w-5 h-5' />
+					<a href={link} target='_blank'>
+						<div className='flex items-center justify-between mb-4'>
+							<span className='text-[#627FFF] text-lg underline cursor-pointer'>
+								View
+							</span>
+							<div className='bg-[#627FFF] bg-opacity-20 p-2 rounded-full'>
+								<ArrowUpRight className='text-[#627FFF] w-5 h-5' />
+							</div>
 						</div>
-					</div>
+					</a>
 
 					<h3 className='text-2xl font-bold text-white mt-2'>
 						{name}
@@ -98,15 +107,19 @@ const PlatformCard = ({ name, icon, index, isExpanded, screenWidth }: any) => {
 						/>
 						<div className='absolute inset-0 rounded-2xl shadow-inner' />
 					</div>
-
-					<div className='flex items-center justify-between mb-4'>
-						<span className='text-blue-400 underline cursor-pointer lg:text-[28px] md:text-[15.6px] sm:text-sm'>
-							View
-						</span>
-						<div className='bg-blue-500/20 p-1.5 rounded-full'>
-							<ArrowUpRight size={16} className='text-blue-400' />
+					<a href={link} target="_blank">
+						<div className='flex items-center justify-between mb-4'>
+							<span className='text-blue-400 underline cursor-pointer lg:text-[28px] md:text-[15.6px] sm:text-sm'>
+								View
+							</span>
+							<div className='bg-blue-500/20 p-1.5 rounded-full'>
+								<ArrowUpRight
+									size={16}
+									className='text-blue-400'
+								/>
+							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 
 				<h3
@@ -140,9 +153,21 @@ const Cards = () => {
 	}, []);
 
 	const platforms = [
-		{ name: "Cetus", icon: one },
-		{ name: "CoinMarketCap", icon: two },
-		{ name: "CoinGecko", icon: three },
+		{
+			name: "Cetus",
+			icon: one,
+			link: "https://app.cetus.zone/new-position-detail/?collect=undefined&&&token=undefined&address=0x5fc8de3d91652c61771b34e4aa7dce9d8fd8d837e06b465ef2df9b1d7741aa8b&pos=0x011e8b402c0a57e71eeb1f57142e04fac761cf5d54bdd01b0fe1feba6293f91b",
+		},
+		{
+			name: "CoinMarketCap",
+			icon: two,
+			link: "https://coinmarketcap.com/currencies/artfi/",
+		},
+		{
+			name: "CoinGecko",
+			icon: three,
+			link: "https://www.coingecko.com/en/coins/artfi",
+		},
 	];
 
 	return (
