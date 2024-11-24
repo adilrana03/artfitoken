@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { Copy, Menu, X } from "lucide-react";
 import logo from "@/assets/token-logo.svg";
 import Image from "next/image";
-import TokenAbout from "./About";
-import Cards from "./Cards";
-
 const TokenDashboard = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 

@@ -1,5 +1,5 @@
 import React from "react";
-import about from "@/assets/about.png";
+import about from "@/assets/image 68 (1).svg";
 import Image from "next/image";
 const TokenAbout = () => {
 	return (

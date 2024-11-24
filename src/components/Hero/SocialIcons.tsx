@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "@/assets/token-logo.svg";
+import logo from "@/assets/Artfi Token Logo.png";
 import Image from "next/image";
 import bg from "@/assets/Rectangle 143.png";
 const SocialIcons = () => {
@@ -11,7 +11,7 @@ const SocialIcons = () => {
 					<Image
 						src={bg}
 						alt='background'
-						className='w-full h-[300px] -mt-10 object-cover'
+						className='w-full h-[300px] md:-mt-10 -mt-[50px] object-cover'
 					/>
 				</div>
 
