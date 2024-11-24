@@ -68,7 +68,7 @@ const TokenDashboard = () => {
 						Dashboard
 					</button>
 				</div>
-				<div className="hidden lg:flex"></div>
+				<div className='hidden lg:flex'></div>
 
 				{/* Mobile/Medium screen navigation overlay */}
 				{isMenuOpen && (
@@ -93,8 +93,8 @@ const TokenDashboard = () => {
 				)}
 			</nav>
 
-			<main className='mx-auto text-center bg-[#0a0a1a] lg:pb-[600px] md:pb-[100px] pb-[60px] mt-[10%]'>
-				<div className='bg max-w-7xl mx-auto bg-gradient-to-b from-[#0a0a1a] via-[#0a0a1a] to-[#7A84FB] md:h-[600px] h-[400px] rounded-3xl'>
+			<main className='mx-auto text-center bg-[#0a0a1a] lg:pb-[600px] md:pb-[100px] pb-[200px] mt-[10%]'>
+				<div className='bg max-w-7xl mx-auto bg-gradient-to-b from-[#0a0a1a] via-[#0a0a1a] to-[#7A84FB] md:h-[600px] h-[300px] rounded-3xl'>
 					<div className='mx-auto text-center mb-8 mt-10 '>
 						<Image src={logo} alt='logo' className='mx-auto' />
 					</div>
@@ -102,17 +102,21 @@ const TokenDashboard = () => {
 						Artfi Ecosystem Utility Token
 					</h2>
 
-					<div className='bg-[rgba(255,255,255,0.13)] bg-opacity-50 rounded-lg lg:p-4 p-2 flex items-center justify-between mb-8 max-w-4xl mx-auto'>
-						<span className='text-gray-200 truncate text-[10px] md:text-[12px] lg:text-[14px] xl:text-[14px] 2xl:text-[18px]'>
-							<span className='font-bold'>Contract Address:</span>{" "}
-							{contractAddress}
-						</span>
-						<button
-							onClick={copyToClipboard}
-							className='text-gray-400 hover:text-white'>
-							<Copy size={20} />
-						</button>
-						<div className='text-nowrap flex lg:p-4 p-2 border rounded-xl border-blue-400 ml-4 text-[16px] md:text-[18px] lg:text-[24px] xl:text-[24px] 2xl:text-[28px]'>
+					<div className='hidden md:block md:bg-[rgba(255,255,255,0.13)] bg-opacity-50 rounded-lg lg:p-4 p-2 md:flex items-center justify-between mb-8 max-w-5xl mx-auto'>
+						<div className='bg-[rgba(255,255,255,0.13)] md:bg-transparent bg-opacity-50 md:p-0 p-2 rounded-xl mb-2 md:mb-0 flex items-center '>
+							<span className='text-gray-200 truncate text-[10px] md:text-[12px] lg:text-[14px] xl:text-[14px] 2xl:text-[18px]'>
+								<span className='font-bold'>
+									Contract Address:
+								</span>{" "}
+								{contractAddress}
+							</span>
+							<button
+								onClick={copyToClipboard}
+								className='text-gray-400 hover:text-white'>
+								<Copy size={20} />
+							</button>
+						</div>
+						<div className='text-nowrap flex lg:p-4 p-2 border rounded-xl border-[#4467FF] shadow shadow-[#74F] md:ml-4 text-[16px] md:text-[18px] lg:text-[24px] xl:text-[24px] 2xl:text-[28px] flex justify-center'>
 							View on Explorer
 						</div>
 					</div>
@@ -134,6 +138,25 @@ const TokenDashboard = () => {
 							</video>
 						</div>
 					</div>
+
+					<div className='mt-[100%] z-40 md:hidden md:bg-[rgba(255,255,255,0.13)] bg-opacity-50 rounded-lg lg:p-4 p-2 md:flex items-center justify-between mb-8 max-w-4xl mx-auto'>
+						<div className='bg-[rgba(255,255,255,0.13)] md:bg-transparent bg-opacity-50 md:p-0 p-2 rounded-xl mb-2 md:mb-0 flex items-center '>
+							<span className='text-gray-200 truncate text-[10px] md:text-[12px] lg:text-[14px] xl:text-[14px] 2xl:text-[18px]'>
+								<span className='font-bold'>
+									Contract Address:
+								</span>{" "}
+								{contractAddress}
+							</span>
+							<button
+								onClick={copyToClipboard}
+								className='text-gray-400 hover:text-white'>
+								<Copy size={20} />
+							</button>
+						</div>
+						<div className='text-nowrap flex lg:p-4 p-2 border rounded-xl border-[#4467FF] shadow shadow-[#74F] md:ml-4 text-[16px] md:text-[18px] lg:text-[24px] xl:text-[24px] 2xl:text-[28px] flex justify-center'>
+							View on Explorer
+						</div>
+					</div>
 				</div>
 			</main>
 		</div>
@@ -141,8 +164,6 @@ const TokenDashboard = () => {
 };
 
 export default TokenDashboard;
-
-
 
 // import React from "react";
 // import { Copy } from "lucide-react";

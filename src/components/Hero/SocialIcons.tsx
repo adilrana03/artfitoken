@@ -11,7 +11,7 @@ const SocialIcons = () => {
 					<Image
 						src={bg}
 						alt='background'
-						className='w-full h-[300px] md:-mt-10 -mt-[50px] object-cover'
+						className='w-full h-[300px] md:-mt-10  object-cover'
 					/>
 				</div>
 
@@ -19,11 +19,11 @@ const SocialIcons = () => {
 					<div className='lg:w-[30%] mb-5 lg:mb-0'>
 						<Image src={logo} alt='logo' className='mx-auto' />
 					</div>
-					<div className='flex md:gap-4 gap-2 items-center justify-center lg:justify-end z-40'>
+					<div className='flex flex-wrap md:flex md:gap-4 gap-5 items-center justify-center lg:justify-end z-40'>
 						<div>
 							<a href='https://discord.gg/artfiglobal'>
 								<svg
-									className='lg:w-[48px] md:w-[32px] w-[30px]'
+									className='lg:w-[48px] md:w-[32px] w-[50px] border border-blue-500 border-r-0 rounded-xl'
 									viewBox='0 0 48 48'
 									fill='none'
 									xmlns='http://www.w3.org/2000/svg'>
@@ -55,7 +55,7 @@ const SocialIcons = () => {
 							<a href='https://t.me/Artfiglobalchat'>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
-									className='lg:w-[48px] md:w-[32px] w-[30px]'
+									className='lg:w-[48px] md:w-[32px] w-[50px] border border-blue-500 border-r-0 rounded-xl'
 									viewBox='0 0 48 48'
 									fill='none'>
 									<circle
@@ -77,7 +77,7 @@ const SocialIcons = () => {
 							<a href='https://x.com/artfiglobal'>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
-									className='lg:w-[48px] md:w-[32px] w-[30px]'
+									className='lg:w-[48px] md:w-[32px] w-[50px] border border-blue-500 border-r-0 rounded-xl'
 									viewBox='0 0 48 48'
 									fill='none'>
 									<circle
@@ -97,7 +97,7 @@ const SocialIcons = () => {
 							<a href='https://www.facebook.com/artfiglobal'>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
-									className='lg:w-[48px] md:w-[32px] w-[30px]'
+									className='lg:w-[48px] md:w-[32px] w-[50px] border border-blue-500 border-r-0 rounded-xl'
 									viewBox='0 0 48 48'
 									fill='none'>
 									<circle
@@ -118,7 +118,7 @@ const SocialIcons = () => {
 							<a href='https://www.linkedin.com/company/artfiglobal/'>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
-									className='lg:w-[48px] md:w-[32px] w-[30px]'
+									className='lg:w-[48px] md:w-[32px] w-[50px] border border-blue-500 border-r-0 rounded-xl'
 									viewBox='0 0 48 48'
 									fill='none'>
 									<circle
@@ -141,7 +141,7 @@ const SocialIcons = () => {
 							<a href='https://www.instagram.com/artfiglobal/'>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
-									className='lg:w-[48px] md:w-[32px] w-[30px]'
+									className='lg:w-[48px] md:w-[32px] w-[50px] border border-blue-500 border-r-0 rounded-xl'
 									viewBox='0 0 48 48'
 									fill='none'>
 									<circle
@@ -161,7 +161,7 @@ const SocialIcons = () => {
 							<a href='https://www.youtube.com/@artfi'>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
-									className='lg:w-[48px] md:w-[32px] w-[30px]'
+									className='lg:w-[48px] md:w-[32px] w-[50px] border border-blue-500 border-r-0 rounded-xl'
 									viewBox='0 0 48 48'
 									fill='none'>
 									<circle
@@ -183,7 +183,6 @@ const SocialIcons = () => {
 					<h1>Copyright @2023 Artfi. All rights Reserved</h1>
 				</div>
 			</div>
-
 		</div>
 	);
 };

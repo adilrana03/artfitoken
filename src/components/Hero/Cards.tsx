@@ -176,7 +176,7 @@ const Cards = () => {
 					{platforms.map((platform, index) => (
 						<div
 							key={platform.name}
-							className='flex-none w-[300px] h-[340px] rounded-2xl bg-gradient-to-b from-[#627FFF] to-[#7241FF] p-[1px] shadow-[0_0_20px_rgba(98,127,255,0.2)]'>
+							className='flex-none w-[340px] h-[340px] rounded-2xl bg-gradient-to-b from-[#627FFF] to-[#7241FF] p-[1px] shadow-[0_0_20px_rgba(98,127,255,0.2)]'>
 							<PlatformCard
 								{...platform}
 								index={index}

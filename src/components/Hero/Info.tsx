@@ -3,7 +3,7 @@ import revenue from '@/assets/revenue.png'
 import mechanism from '@/assets/mechanism.png'
 import Image from "next/image";
 const InfoCard = ({ title, content, children }: any) => (
-	<div className='bg-black rounded-3xl md:px-[46px] px-4 py-[42px] border border-[#4467FF] shadow shadow-xl border-r-0 min-w-[320px]'>
+	<div className='bg-black rounded-3xl md:px-[46px] px-4 py-[42px] border border-[#4467FF] shadow shadow-xl border-r-0 min-w-[320px] min-h-[600px] md:min-h-[300px]'>
 		<h2 className='text-[24px] lg:text-[38px]  font-medium text-white mb-6'>
 			{title}
 		</h2>
@@ -74,7 +74,7 @@ const TokenomicsInfo = () => {
 								and token buyback is verifiable by our community
 							</p>
 						}>
-						<div className='flex justify-center items-baseline '>
+						<div className='flex justify-center items-baseline md:mt-16'>
 							<div className=' flex items-end justify-center'>
 								{/* Replace with your actual icon/illustration */}
 								<Image
