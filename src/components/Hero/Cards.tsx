@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
@@ -12,7 +12,6 @@ const PlatformCard = ({ name, icon, index, isExpanded, screenWidth }: any) => {
 		const initialRotation = (index - 1) * baseRotation;
 		const marginTop = index === 1 ? 0 : -40;
 
-		// Responsive spacing for different screen sizes
 		const expandedSpacing = {
 			lg: 440,
 			md: 260,
@@ -21,12 +20,11 @@ const PlatformCard = ({ name, icon, index, isExpanded, screenWidth }: any) => {
 
 		const stackedMarginLeft = index === 1 ? 0 : index === 0 ? -190 : 190;
 
-		// Adjust spacing based on screen size
-		  const getSpacing = () => {
-				if (screenWidth >= 1024) return expandedSpacing.lg;
-				if (screenWidth >= 768) return expandedSpacing.md;
-				return expandedSpacing.sm;
-			};
+		const getSpacing = () => {
+			if (screenWidth >= 1024) return expandedSpacing.lg;
+			if (screenWidth >= 768) return expandedSpacing.md;
+			return expandedSpacing.sm;
+		};
 
 		const spacing = getSpacing();
 		const totalWidth = spacing * 2;
@@ -51,32 +49,58 @@ const PlatformCard = ({ name, icon, index, isExpanded, screenWidth }: any) => {
 		};
 	};
 
-	return (
+	// Mobile card component
+	// Updated Mobile Card component to match the design
+	const MobileCard = () => (
+		<div className='bg-[#0A0A1A] rounded-2xl overflow-hidden h-full'>
+			<div className='relative flex flex-col h-full p-6'>
+				{/* Icon container */}
+				<div className='relative mb-auto'>
+					<Image
+						src={icon}
+						alt={name}
+						className='mx-auto rounded-2xl object-cover w-[120px] h-[120px]'
+					/>
+				</div>
+
+				{/* Bottom section with View link and arrow */}
+				<div className='mt-auto'>
+					<div className='flex items-center justify-between mb-4'>
+						<span className='text-[#627FFF] text-lg underline cursor-pointer'>
+							View
+						</span>
+						<div className='bg-[#627FFF] bg-opacity-20 p-2 rounded-full'>
+							<ArrowUpRight className='text-[#627FFF] w-5 h-5' />
+						</div>
+					</div>
+
+					<h3 className='text-2xl font-bold text-white mt-2'>
+						{name}
+					</h3>
+				</div>
+			</div>
+		</div>
+	);
+
+	return screenWidth < 768 ? (
+		<MobileCard />
+	) : (
 		<div
 			className='absolute transition-all duration-500 ease-out p-[1px] bg-gradient-to-r from-[#4467FF] to-[#7241FF] rounded-2xl'
 			style={getCardStyle()}>
-			<div
-				className='relative bg-black backdrop-blur-sm rounded-2xl p-4 border border-blue-500/20
-          lg:w-[430px] lg:h-[465px] 
-          md:w-[235px] md:h-[320px]
-          sm:w-[200px] sm:h-[280px]'>
+			<div className='relative bg-black backdrop-blur-sm rounded-2xl p-4 border border-blue-500/20 lg:w-[430px] lg:h-[465px] md:w-[235px] md:h-[320px] sm:w-[200px] sm:h-[280px]'>
 				<div className='border-4 border-gray-800 p-5 rounded-2xl'>
 					<div className='relative mb-8'>
 						<Image
 							src={icon}
 							alt={name}
-							className='mx-auto rounded-2xl object-cover
-                lg:w-[174px] lg:h-[177px]
-                md:w-[95px] md:h-[95px]
-                sm:w-[80px] sm:h-[80px]'
+							className='mx-auto rounded-2xl object-cover lg:w-[174px] lg:h-[177px] md:w-[95px] md:h-[95px] sm:w-[80px] sm:h-[80px]'
 						/>
 						<div className='absolute inset-0 rounded-2xl shadow-inner' />
 					</div>
 
 					<div className='flex items-center justify-between mb-4'>
-						<span
-							className='text-blue-400 underline cursor-pointer
-              lg:text-[28px] md:text-[15.6px] sm:text-sm'>
+						<span className='text-blue-400 underline cursor-pointer lg:text-[28px] md:text-[15.6px] sm:text-sm'>
 							View
 						</span>
 						<div className='bg-blue-500/20 p-1.5 rounded-full'>
@@ -103,23 +127,18 @@ const PlatformCard = ({ name, icon, index, isExpanded, screenWidth }: any) => {
 
 const Cards = () => {
 	const [isExpanded, setIsExpanded] = useState(false);
-	const [screenWidth, setScreenWidth] = useState(1024); // Default to desktop size
+	const [screenWidth, setScreenWidth] = useState(1024);
 
 	useEffect(() => {
-		// Update screen width on mount and window resize
 		const handleResize = () => {
 			setScreenWidth(window.innerWidth);
 		};
 
-		// Set initial width
 		handleResize();
-
-		// Add event listener
 		window.addEventListener("resize", handleResize);
-
-		// Cleanup
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
+
 	const platforms = [
 		{ name: "Cetus", icon: one },
 		{ name: "CoinMarketCap", icon: two },
@@ -131,7 +150,7 @@ const Cards = () => {
 			{/* Desktop and Tablet View */}
 			<div className='hidden md:flex items-center justify-center'>
 				<div
-					className='relative  h-[600px] w-full max-w-[1800px] flex items-center justify-center'
+					className='relative h-[600px] w-full max-w-[1800px] flex items-center justify-center'
 					onMouseEnter={() => setIsExpanded(true)}
 					onMouseLeave={() => setIsExpanded(false)}>
 					<div className='absolute h-full w-full flex items-center justify-center'>
@@ -152,21 +171,18 @@ const Cards = () => {
 			</div>
 
 			{/* Mobile View with Horizontal Scroll */}
-			<div className='md:hidden w-full overflow-x-auto px-4 py-8'>
-				<div className='flex gap-4 min-w-max'>
+			<div className='md:hidden w-full overflow-x-auto scrollbar-hide'>
+				<div className='flex gap-4 p-4 min-w-max'>
 					{platforms.map((platform, index) => (
 						<div
 							key={platform.name}
-							className='w-[200px] p-[1px] bg-gradient-to-r from-[#4467FF] to-[#7241FF] rounded-2xl'>
-							{/* Mobile card content - similar to PlatformCard but simplified */}
-							<div className='bg-black rounded-2xl p-4 h-[280px]'>
-								{/* <PlatformCard
-									key={platform.name}
-									{...platform}
-									index={index}
-									isExpanded={isExpanded}
-								/> */}
-							</div>
+							className='flex-none w-[300px] h-[340px] rounded-2xl bg-gradient-to-b from-[#627FFF] to-[#7241FF] p-[1px] shadow-[0_0_20px_rgba(98,127,255,0.2)]'>
+							<PlatformCard
+								{...platform}
+								index={index}
+								isExpanded={false}
+								screenWidth={screenWidth}
+							/>
 						</div>
 					))}
 				</div>

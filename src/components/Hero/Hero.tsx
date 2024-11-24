@@ -95,9 +95,9 @@ const TokenDashboard = () => {
 				)}
 			</nav>
 
-			<main className='mx-auto text-center bg-[#0a0a1a] lg:pb-[600px] md:pb-[100px]'>
-				<div className='bg max-w-7xl mx-auto bg-gradient-to-b from-[#0a0a1a] via-[#0a0a1a] to-[#7A84FB] h-[600px] rounded-3xl'>
-					<div className='mx-auto text-center mb-8'>
+			<main className='mx-auto text-center bg-[#0a0a1a] lg:pb-[600px] md:pb-[100px] pb-[60px]'>
+				<div className='bg max-w-7xl mx-auto bg-gradient-to-b from-[#0a0a1a] via-[#0a0a1a] to-[#7A84FB] md:h-[600px] h-[400px] rounded-3xl'>
+					<div className='mx-auto text-center mb-8 mt-10 md:mt-0'>
 						<Image src={logo} alt='logo' className='mx-auto' />
 					</div>
 					<h2 className='text-[20px] md:text-[32px] lg:text-[46px] xl:text-[48px] 2xl:text-[52px] font-medium text-[#627FFF] mb-12'>
@@ -119,19 +119,22 @@ const TokenDashboard = () => {
 						</div>
 					</div>
 
-					<div className='bg-black absolute z-40 lg:ml-10 ml-[8%] mt-10 text-center rounded-3xl mx-auto flex justify-center'>
-						<video
-							className='lg:w-[1182px] md:w-[670px] md:h-[378px] lg:h-[670px] rounded-3xl mx-auto'
-							controls
-							autoPlay
-							loop
-							muted>
-							<source
-								src='https://s3-figma-videos-production-sig.figma.com/video/1158077750918977223/TEAM/0c70/4a99/-2220-429f-8ae7-92c2cff4f0cf?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XziDR6PYo9aRQqKZeNsHrKcUop0KEhNOd-FNLR6PxOVzbceCJGZg7mqMjw-DgI4pQZibPao-hJX4gi7k9684DiOzrkz96yq6WtqhpjUUmzdZO8oZP1fhquUJLRlj7AsauTpAEtyDip~OxJ76XJhqcpcyMW3rdgZcbj2f5bx7uzX3l2ydbdreEmJnoQu2dmGIGlo4HGGzv8UGH5CYmrRLiQf6DU5tSS-t4LGf6yC30idsi8OmIN9mUNvcLbzTkiPZQkHKU4wPt3L6RhJSxmit7zZebZTJR27HyA7~SjgfYrlp5oTHcKIctrmRnxeqNXAb6S5tuayhPdg1Et1AXahhTQ__'
-								type='video/mp4'
-							/>
-							Your browser does not support the video tag.
-						</video>
+					{/* Video Container */}
+					<div className='absolute left-1/2 transform -translate-x-1/2 mt-8 w-[90%] px-4 max-w-[1182px]'>
+						<div className='bg-black rounded-3xl overflow-hidden'>
+							<video
+								className='w-full h-[179px] md:h-[378px] lg:h-[670px] rounded-3xl object-cover'
+								controls
+								autoPlay
+								loop
+								muted>
+								<source
+									src='https://s3-figma-videos-production-sig.figma.com/video/1158077750918977223/TEAM/0c70/4a99/-2220-429f-8ae7-92c2cff4f0cf?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XziDR6PYo9aRQqKZeNsHrKcUop0KEhNOd-FNLR6PxOVzbceCJGZg7mqMjw-DgI4pQZibPao-hJX4gi7k9684DiOzrkz96yq6WtqhpjUUmzdZO8oZP1fhquUJLRlj7AsauTpAEtyDip~OxJ76XJhqcpcyMW3rdgZcbj2f5bx7uzX3l2ydbdreEmJnoQu2dmGIGlo4HGGzv8UGH5CYmrRLiQf6DU5tSS-t4LGf6yC30idsi8OmIN9mUNvcLbzTkiPZQkHKU4wPt3L6RhJSxmit7zZebZTJR27HyA7~SjgfYrlp5oTHcKIctrmRnxeqNXAb6S5tuayhPdg1Et1AXahhTQ__'
+									type='video/mp4'
+								/>
+								Your browser does not support the video tag.
+							</video>
+						</div>
 					</div>
 				</div>
 			</main>
