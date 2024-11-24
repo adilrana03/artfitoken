@@ -44,7 +44,11 @@ const TokenomicsInfo = () => {
 					}>
 					<div className='flex justify-center'>
 						<div className=' flex items-center justify-center'>
-							<Image src={revenue} alt='revenue' className="lg:w-[360px] w-[211px] h-[135px] lg:h-[230px] mx-auto" />
+							<Image
+								src={revenue}
+								alt='revenue'
+								className='lg:w-[360px] w-[211px] h-[135px] lg:h-[230px] mx-auto'
+							/>
 						</div>
 					</div>
 				</InfoCard>
@@ -54,24 +58,28 @@ const TokenomicsInfo = () => {
 					title='Mechanism'
 					content={
 						<p>
-							At the heart of Artfi's approach is our commitment
-							to a deflationary mechanism, where every dollar of
-							revenue is used to buy back $ARTFI tokens. This
-							strategy not only strengthens token value but also
-							solidifies Artfi's position as a pioneering platform
-							in the RWA space. By keeping our revenue-sharing
-							activities on-chain, we offer full transparency,
-							ensuring that every sale, revenue allocation, and
-							token buyback is verifiable by our community
+							At the heart of Artfi&apos;s approach is our
+							commitment to a deflationary mechanism, where every
+							dollar of revenue is used to buy back $ARTFI tokens.
+							This strategy not only strengthens token value but
+							also solidifies Artfi&apos;s position as a
+							pioneering platform in the RWA space. By keeping our
+							revenue-sharing activities on-chain, we offer full
+							transparency, ensuring that every sale, revenue
+							allocation, and token buyback is verifiable by our
+							community
 						</p>
 					}>
 					<div className='flex justify-center items-baseline '>
 						<div className=' flex items-end justify-center'>
 							{/* Replace with your actual icon/illustration */}
-							<Image src={mechanism} alt='mechanism' className="lg:h-[212px] lg:w-[520px] md:h-[124px] md:w-[305px]" />
+							<Image
+								src={mechanism}
+								alt='mechanism'
+								className='lg:h-[212px] lg:w-[520px] md:h-[124px] md:w-[305px]'
+							/>
 						</div>
 					</div>
-
 				</InfoCard>
 
 				{/* Vision & Utility Card - Full Width */}

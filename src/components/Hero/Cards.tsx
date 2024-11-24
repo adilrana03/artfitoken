@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+'use client'
+import React, { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import one from "@/assets/1.png";
 import two from "@/assets/2.png";
 import three from "@/assets/3.png";
 
-const PlatformCard = ({ name, icon, index, isExpanded }: any) => {
+const PlatformCard = ({ name, icon, index, isExpanded, screenWidth }: any) => {
 	const getCardStyle = () => {
 		const baseRotation = 20;
 		const initialRotation = (index - 1) * baseRotation;
@@ -21,11 +22,11 @@ const PlatformCard = ({ name, icon, index, isExpanded }: any) => {
 		const stackedMarginLeft = index === 1 ? 0 : index === 0 ? -190 : 190;
 
 		// Adjust spacing based on screen size
-		const getSpacing = () => {
-			if (window.innerWidth >= 1024) return expandedSpacing.lg;
-			if (window.innerWidth >= 768) return expandedSpacing.md;
-			return expandedSpacing.sm;
-		};
+		  const getSpacing = () => {
+				if (screenWidth >= 1024) return expandedSpacing.lg;
+				if (screenWidth >= 768) return expandedSpacing.md;
+				return expandedSpacing.sm;
+			};
 
 		const spacing = getSpacing();
 		const totalWidth = spacing * 2;
@@ -102,7 +103,23 @@ const PlatformCard = ({ name, icon, index, isExpanded }: any) => {
 
 const Cards = () => {
 	const [isExpanded, setIsExpanded] = useState(false);
+	const [screenWidth, setScreenWidth] = useState(1024); // Default to desktop size
 
+	useEffect(() => {
+		// Update screen width on mount and window resize
+		const handleResize = () => {
+			setScreenWidth(window.innerWidth);
+		};
+
+		// Set initial width
+		handleResize();
+
+		// Add event listener
+		window.addEventListener("resize", handleResize);
+
+		// Cleanup
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
 	const platforms = [
 		{ name: "Cetus", icon: one },
 		{ name: "CoinMarketCap", icon: two },
@@ -125,6 +142,7 @@ const Cards = () => {
 									{...platform}
 									index={index}
 									isExpanded={isExpanded}
+									screenWidth={screenWidth}
 								/>
 							))}
 						</div>
@@ -158,17 +176,6 @@ const Cards = () => {
 };
 
 export default Cards;
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState } from "react";
 // import { ArrowUpRight } from "lucide-react";
