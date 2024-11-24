@@ -1,0 +1,10 @@
+.cash {
+  	width: 100%;
+  	position: relative;
+  	letter-spacing: 0.5px;
+  	text-transform: uppercase;
+  	color: #fff;
+  	text-align: center;
+  	display: inline-block;
+}
+
