@@ -2,16 +2,29 @@ import React from "react";
 import logo from "@/assets/Artfi Token Logo.png";
 import Image from "next/image";
 import bg from "@/assets/Rectangle 143.png";
-const SocialIcons = () => {
+const SocialIcon = ({ href, children }: any) => (
+	<a
+		href={href}
+		target='_blank'
+		rel='noopener noreferrer'
+		className='block relative z-50 hover:scale-105 transition-transform'
+		onClick={(e) => {
+			e.stopPropagation();
+			window.open(href, "_blank", "noopener,noreferrer");
+		}}>
+		{children}
+	</a>
+);
+const SocialIcons = ({ href, children }: any) => {
 	return (
-		<div className=' bg-black  p-8  mx-auto text-center relative'>
-			<div className='max-w-7xl w-[90%] mx-auto '>
+		<div className='bg-black p-8 mx-auto text-center relative'>
+			<div className='max-w-7xl w-[90%] mx-auto'>
 				{/* Image overlay layer */}
-				<div className='absolute inset-0'>
+				<div className='absolute inset-0 pointer-events-none'>
 					<Image
 						src={bg}
 						alt='background'
-						className='w-full h-[300px] md:-mt-10  object-cover'
+						className='w-full h-[300px] md:-mt-10 object-cover'
 					/>
 				</div>
 
@@ -19,9 +32,10 @@ const SocialIcons = () => {
 					<div className='lg:w-[30%] mb-5 lg:mb-0'>
 						<Image src={logo} alt='logo' className='mx-auto' />
 					</div>
-					<div className='flex flex-wrap md:flex md:gap-4 gap-5 items-center justify-center lg:justify-end z-40'>
+					<div className='flex flex-wrap gap-4 items-center justify-center lg:justify-end relative z-20'>
 						<div>
-							<a href='https://discord.gg/artfiglobal'>
+							<SocialIcon href='https://discord.gg/artfiglobal'>
+								{/* <a href='https://discord.gg/artfiglobal'> */}
 								<svg
 									className='lg:w-[48px] md:w-[32px] w-[50px] border border-blue-500 border-r-0 rounded-xl'
 									viewBox='0 0 48 48'
@@ -49,10 +63,12 @@ const SocialIcons = () => {
 										fill='white'
 									/>
 								</svg>
-							</a>
+								{/* </a> */}
+							</SocialIcon>
 						</div>
 						<div>
-							<a href='https://t.me/Artfiglobalchat'>
+							<SocialIcon href='https://t.me/Artfiglobalchat'>
+								{/* <a href='https://t.me/Artfiglobalchat'> */}
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									className='lg:w-[48px] md:w-[32px] w-[50px] border border-blue-500 border-r-0 rounded-xl'
@@ -71,10 +87,12 @@ const SocialIcons = () => {
 										fill='white'
 									/>
 								</svg>
-							</a>
+								{/* </a> */}
+							</SocialIcon>
 						</div>
 						<div>
-							<a href='https://x.com/artfiglobal'>
+							<SocialIcon href='https://x.com/artfiglobal'>
+								{/* <a> */}
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									className='lg:w-[48px] md:w-[32px] w-[50px] border border-blue-500 border-r-0 rounded-xl'
@@ -91,10 +109,12 @@ const SocialIcons = () => {
 										fill='white'
 									/>
 								</svg>
-							</a>
+								{/* </a> */}
+							</SocialIcon>
 						</div>
 						<div>
-							<a href='https://www.facebook.com/artfiglobal'>
+							<SocialIcon href='https://www.facebook.com/artfiglobal'>
+								{/* <a href='https://www.facebook.com/artfiglobal'> */}
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									className='lg:w-[48px] md:w-[32px] w-[50px] border border-blue-500 border-r-0 rounded-xl'
@@ -111,11 +131,13 @@ const SocialIcons = () => {
 										fill='white'
 									/>
 								</svg>
-							</a>
+								{/* </a> */}
+							</SocialIcon>
 						</div>
 
 						<div>
-							<a href='https://www.linkedin.com/company/artfiglobal/'>
+							<SocialIcon href='https://www.linkedin.com/company/artfiglobal/'>
+								{/* <a href='https://www.linkedin.com/company/artfiglobal/'> */}
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									className='lg:w-[48px] md:w-[32px] w-[50px] border border-blue-500 border-r-0 rounded-xl'
@@ -134,11 +156,14 @@ const SocialIcons = () => {
 										fill='white'
 									/>
 								</svg>
-							</a>
+							</SocialIcon>
+
+							{/* </a> */}
 						</div>
 
 						<div>
-							<a href='https://www.instagram.com/artfiglobal/'>
+							<SocialIcon href='https://www.instagram.com/artfiglobal/'>
+								{/* <a href='https://www.instagram.com/artfiglobal/'> */}
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									className='lg:w-[48px] md:w-[32px] w-[50px] border border-blue-500 border-r-0 rounded-xl'
@@ -155,10 +180,11 @@ const SocialIcons = () => {
 										fill='white'
 									/>
 								</svg>
-							</a>
+								{/* </a> */}
+							</SocialIcon>
 						</div>
 						<div>
-							<a href='https://www.youtube.com/@artfi'>
+							<SocialIcon href='https://www.youtube.com/@artfi'>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									className='lg:w-[48px] md:w-[32px] w-[50px] border border-blue-500 border-r-0 rounded-xl'
@@ -175,7 +201,7 @@ const SocialIcons = () => {
 										fill='white'
 									/>
 								</svg>
-							</a>
+							</SocialIcon>
 						</div>
 					</div>
 				</div>
