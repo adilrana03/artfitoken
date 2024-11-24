@@ -130,7 +130,9 @@ const TokenDashboard = () => {
 								<Copy size={20} />
 							</button>
 						</div>
-						<a href='https://suiscan.xyz/mainnet/coin/0x706fa7723231e13e8d37dad56da55c027f3163094aa31c867ca254ba0e0dc79f::artfi::ARTFI/txs' target="_blank">
+						<a
+							href='https://suiscan.xyz/mainnet/coin/0x706fa7723231e13e8d37dad56da55c027f3163094aa31c867ca254ba0e0dc79f::artfi::ARTFI/txs'
+							target='_blank'>
 							<div className='text-nowrap flex lg:p-4 p-2 border rounded-xl border-[#4467FF] shadow shadow-[#74F] md:ml-4 text-[16px] md:text-[18px] lg:text-[24px] xl:text-[24px] 2xl:text-[28px] flex justify-center'>
 								View on Explorer
 							</div>
@@ -169,9 +171,13 @@ const TokenDashboard = () => {
 								<Copy size={20} />
 							</button>
 						</div>
-						<div className='text-nowrap flex lg:p-4 p-2 border rounded-xl border-[#4467FF] shadow shadow-[#74F] md:ml-4 text-[16px] md:text-[18px] lg:text-[24px] xl:text-[24px] 2xl:text-[28px] flex justify-center'>
-							View on Explorer
-						</div>
+						<a
+							href='https://suiscan.xyz/mainnet/coin/0x706fa7723231e13e8d37dad56da55c027f3163094aa31c867ca254ba0e0dc79f::artfi::ARTFI/txs'
+							target='_blank'>
+							<div className='text-nowrap flex lg:p-4 p-2 border rounded-xl border-[#4467FF] shadow shadow-[#74F] md:ml-4 text-[16px] md:text-[18px] lg:text-[24px] xl:text-[24px] 2xl:text-[28px] flex justify-center'>
+								View on Explorer
+							</div>
+						</a>
 					</div>
 				</div>
 			</main>
