@@ -5,7 +5,7 @@ import bg from "@/assets/Rectangle 143.png";
 const SocialIcons = () => {
 	return (
 		<div className=' bg-black  p-8  mx-auto text-center relative'>
-			<div className='w-[90%] mx-auto '>
+			<div className='max-w-7xl w-[90%] mx-auto '>
 				{/* Image overlay layer */}
 				<div className='absolute inset-0'>
 					<Image

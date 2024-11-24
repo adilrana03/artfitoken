@@ -5,9 +5,9 @@ const TokenAbout = () => {
 	return (
 		<div className='bg-[#0a0a1a] lg:min-h-screen p-8'>
 			<div className='max-w-6xl mx-auto'>
-				<div className='bg-black shadow-xl shadow-blue-800  rounded-3xl p-12 relative overflow-hidden border border-blue-900/20'>
+				<div className='bg-black shadow-xl shadow-blue-800  rounded-3xl p-12 relative overflow-hidden border order-blue-900/20 border-[#4467FF] border-x-0'>
 					{/* Blue glow effect at the border */}
-					<div className='absolute inset-0 border border-blue-500/20 rounded-3xl shadow-[0_0_30px_rgba(0,0,255,0.1)]' />
+					<div className='absolute inset-0 border border-blue-500/20 rounded-3xl shadow-[0_0_30px_rgba(0,0,255,0.1)] borde ' />
 
 					<div className='relative md:flex justify-between items-center gap-5'>
 						<div className='lg:max-w-2xl '>
@@ -44,7 +44,7 @@ const TokenAbout = () => {
 
 						{/* Token Icon */}
 						<div className='relative flex justify-center items-center  my-auto'>
-							<Image src={about} alt='image' className=" " />
+							<Image src={about} alt='image' className=' ' />
 						</div>
 					</div>
 

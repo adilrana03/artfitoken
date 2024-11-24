@@ -60,17 +60,18 @@ const TokenDashboard = () => {
 				</button>
 
 				{/* Desktop navigation */}
-				<div className='hidden lg:flex gap-4'>
-					<button className='px-6 py-2 rounded-full bg-blue-600 bg-opacity-20 text-blue-400'>
+				<div className='hidden lg:flex gap-10 text-[20px] text-white font-medium'>
+					<button className='px-6 py-2 rounded-full bg-black bg-opacity-20 text-blue-400 rounded-[40px] border-[3px] border-[#4467FF]'>
 						Whitepapers
 					</button>
-					<button className='px-6 py-2 rounded-full bg-gray-800'>
+					<button className='px-6 py-2 rounded-full  rounded-[40px] border-[1px] border-gray-400 bg-black'>
 						Tokenomics
 					</button>
-					<button className='px-6 py-2 rounded-full bg-gray-800'>
+					<button className='px-6 py-2 rounded-full  rounded-[40px] border-[1px] border-gray-400 bg-black'>
 						Dashboard
 					</button>
 				</div>
+				<div className="hidden lg:flex"></div>
 
 				{/* Mobile/Medium screen navigation overlay */}
 				{isMenuOpen && (
@@ -79,7 +80,7 @@ const TokenDashboard = () => {
 							<button
 								className='absolute top-8 right-8 text-white hover:text-gray-300'
 								onClick={toggleMenu}>
-								{/* <X size={24} /> */}
+								<X size={24} />
 							</button>
 							<button className='px-6 py-2 w-48 rounded-full bg-blue-600 bg-opacity-20 text-blue-400'>
 								Whitepapers
@@ -95,9 +96,9 @@ const TokenDashboard = () => {
 				)}
 			</nav>
 
-			<main className='mx-auto text-center bg-[#0a0a1a] lg:pb-[600px] md:pb-[100px] pb-[60px]'>
+			<main className='mx-auto text-center bg-[#0a0a1a] lg:pb-[600px] md:pb-[100px] pb-[60px] mt-[10%]'>
 				<div className='bg max-w-7xl mx-auto bg-gradient-to-b from-[#0a0a1a] via-[#0a0a1a] to-[#7A84FB] md:h-[600px] h-[400px] rounded-3xl'>
-					<div className='mx-auto text-center mb-8 mt-10 md:mt-0'>
+					<div className='mx-auto text-center mb-8 mt-10 '>
 						<Image src={logo} alt='logo' className='mx-auto' />
 					</div>
 					<h2 className='text-[20px] md:text-[32px] lg:text-[46px] xl:text-[48px] 2xl:text-[52px] font-medium text-[#627FFF] mb-12'>

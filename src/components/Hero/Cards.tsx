@@ -172,7 +172,7 @@ const Cards = () => {
 
 			{/* Mobile View with Horizontal Scroll */}
 			<div className='md:hidden w-full overflow-x-auto scrollbar-hide'>
-				<div className='flex gap-4 p-4 min-w-max'>
+				<div className='flex gap-4 md:p-4 pl-8 pr-4 py-8  min-w-max'>
 					{platforms.map((platform, index) => (
 						<div
 							key={platform.name}
